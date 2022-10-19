@@ -20,4 +20,26 @@ class ApplicationController < ActionController::Base
     @result = @num1 - @num2
     render({ :template => "subtract_results.html.erb" })
   end
+
+  def multiply
+    render({ :template => "multiply.html.erb" })
+  end
+
+  def multiply_results
+    @num1 = params["num1"].to_f
+    @num2 = params["num2"].to_f
+    @result = @num1 * @num2
+    render({ :template => "multiply_results.html.erb" })
+  end
+
+  def divide
+    render({ :template => "divide.html.erb" })
+  end
+
+  def divide_results
+    @num1 = params["num1"].to_f
+    @num2 = params["num2"].to_f
+    @result = @num1 / @num2
+    render({ :template => "divide_results.html.erb" })
+  end
 end
