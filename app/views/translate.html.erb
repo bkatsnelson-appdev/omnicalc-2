@@ -3,7 +3,12 @@
 <form action="/wizard_translate">
   <label for="saying">Say what?</label>
   <input id="saying" name="saying">
-  <label for="language">to this:</label>
-  <input id="language" name="language">
+
+  <select name="language">
+    <% @languages.each do |lang| %>
+      <option value=<%lang.code%>> <%=lang.name%></option>
+    <% end %>
+  </select>
+
   <button>Translate!</button>
 </form>
