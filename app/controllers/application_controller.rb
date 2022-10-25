@@ -42,4 +42,12 @@ class ApplicationController < ActionController::Base
     @result = @num1 / @num2
     render({ :template => "divide_results.html.erb" })
   end
+
+  def translate
+    render({ :template => "translate.html.erb" })
+  end
+
+  def translate_results
+    render({ :template => "translate_results.html.erb" })
+  end
 end

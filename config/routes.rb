@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   get("/divide", { :controller => "application", :action => "divide" })
   get("/wizard_divide", { :controller => "application", :action => "divide_results" })
+
+  get("/muggle_translate", { :controller => "application", :action => "translate" })
+  get("/wizard_translate", { :controller => "application", :action => "translate_results" })
 end
