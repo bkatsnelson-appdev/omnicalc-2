@@ -44,26 +44,26 @@ class ApplicationController < ActionController::Base
   end
 
   def translate
-    # require "google/cloud/translate"
+    require "google/cloud/translate"
 
-    # gt_client = Google::Cloud::Translate.new({ :version => :v2 })
-    # @languages = gt_client.languages("en") # The argument determines what language to list the other language names in
+    gt_client = Google::Cloud::Translate.new({ :version => :v2 })
+    @languages = gt_client.languages("en") # The argument determines what language to list the other language names in
 
-    # #@languages[0].code => "af"
-    # #@languages[0].name => "Afrikaans"
+    #@languages[0].code => "af"
+    #@languages[0].name => "Afrikaans"
 
     render({ :template => "translate.html.erb" })
   end
 
   def translate_results
-    # require "google/cloud/translate"
+    require "google/cloud/translate"
 
-    # gt_client = Google::Cloud::Translate.new({ :version => :v2 })
+    gt_client = Google::Cloud::Translate.new({ :version => :v2 })
 
-    # @saying = params["saying"]
-    # @lang = params["language"]
+    @saying = params["saying"]
+    @lang = params["language"]
 
-    # @translation = gt_client.translate(@saying, { :to => @lang })
+    @translation = gt_client.translate(@saying, { :to => @lang })
     render({ :template => "translate_results.html.erb" })
   end
 end
